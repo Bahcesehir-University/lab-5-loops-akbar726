@@ -37,8 +37,12 @@ int main() {
     // Example output: "Hello, Ali! Welcome to the Loops Lab."
 
     // TODO: Declare a string variable for the name
+    string name;
     // TODO: Prompt the user and read the name with cin
+    cout <<  "Enter your name:" ;
+    cin >> name;
     // TODO: Print the greeting
+    cout << "Hello," << name <<" Welcome to the Loops Lab." << endl; 
 
     cout << endl;
 
@@ -49,8 +53,15 @@ int main() {
     //   Product: 28
 
     // TODO: Declare two int variables
-    // TODO: Prompt and read both integers
+    int a,b;
+    // int a;
+    // int b;
+    // TODO: Prompt and read both
+    cout << "Enter two integers:" ;
+    cin >> a >> b ; 
     // TODO: Print the sum and product
+    cout << "Sum:" << (a+b) << endl;
+    cout << "Product:"<<(a*b) << endl;
 
     cout << endl;
 
@@ -77,8 +88,13 @@ int main() {
     // Exercise 2.1
     // Using a WHILE loop, print all EVEN numbers from 2 to 20.
     // Expected output: 2 4 6 8 10 12 14 16 18 20
-
-    cout << "Even numbers (while): ";
+    int i = 2 ;
+    while ( i <= 20){
+        cout<< i <<" " ; 
+        i += 2 ; 
+    }
+    cout << endl;
+    cout << "Even numbers (while):";
     // TODO: Write a while loop that prints even numbers from 2 to 20
 
     cout << endl;
@@ -124,8 +140,17 @@ int main() {
     // Then print: "You entered: X"
 
     // TODO: Declare an int variable
+    int num;
     // TODO: Write a do-while loop that validates input (1-10)
+    do{ 
+ cout << "Enter a number between 1 and 10:" ;
+ cin >> num;
+ if (num < 1 || num > 10) { 
+     cout << "Invalid! Try again" << endl;
+ }
+    }while(num < 1 || num > 10);
     // TODO: Print the valid number
+    cout << "You entered:" << num << endl;
 
     cout << endl;
 
@@ -146,6 +171,12 @@ int main() {
     // TODO: Ask user for a starting number
     // TODO: Use a loop to count down to 1, printing each number followed by "... "
     // TODO: After the loop, print "Liftoff!"
+    int start ; 
+    cout << "Enter the starting number";
+    cin >> start;
+    for (int c = start; c >=1 ; c--)
+    cout << c << " ";
+    cout << endl<< "Liftoff!" << endl;
 
     cout << endl;
 
@@ -163,6 +194,18 @@ int main() {
     // TODO: Ask how many numbers
     // TODO: Use a for loop to read each number and accumulate the sum
     // TODO: Print the total sum
+    int count; 
+    cout << "How many numbers?";
+    cin >> count;
+    
+    int sum = 0 ; 
+    for (int k = 1; k <= count; k++) { 
+        int val;
+        cout << "Enter number " << k << ":" ; 
+        cin >>val;
+        sum+=val;
+    }
+    cout << "Total sum: "<< sum <<endl;
 
     cout << endl;
 
@@ -179,6 +222,12 @@ int main() {
     // TODO: Ask for N
     // TODO: Use a for loop from 1 to 10
     // TODO: Print each line: N x i = N*i
+    int N ;
+    cout << "Enter a number" ;
+    cin >> N ; 
+    for ( int m=1 ; m <=10 ; m++){
+        cout << N << "x" << m << "=" << (N*m) << endl;
+    }
 
     cout << endl;
 
@@ -194,7 +243,15 @@ int main() {
     // TODO: Use a loop to calculate the factorial
     //       Hint: start with result = 1, multiply by each number from 1 to N
     // TODO: Print the result
-
+    int fn; 
+    cout << "Enter a non-negative integer";
+    cin >> fn;
+    
+    long factorial = 1 ;
+    for (int f = 1 ; f <= fn ; f++){ 
+        factorial *= f ; 
+    } 
+    cout << fn << "! = " << factorial << endl;
     cout << endl;
 
     // Exercise 3.5 — Number Guessing (Sentinel Loop)
@@ -213,6 +270,20 @@ int main() {
     //       - Increment the counter
     //       - Print "Too high!" or "Too low!" if wrong
     // TODO: Print "Correct! You guessed it in X tries."
+    int guess ; 
+    int tries =0 ;
+    do{ 
+        cout << "Guess the secret number"; 
+        cin >> guess ;
+        tries ++ ;
+        if(guess > secret){ 
+            cout << "Too high" << endl;
+        } else if ( guess < secret) { 
+            cout << "Too small" ; 
+        } 
+    } while (guess != secret); 
+    
+    cout <<" Correct! you guessed it in" << tries << "tries" <<endl;
 
     cout << endl;
 
